@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: braille-converter-app
+    env: python
+    pythonVersion: 3.10
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+
